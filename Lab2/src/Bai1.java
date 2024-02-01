@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class BaiTap1 {
+public class Bai1 {
     public static void main(String[] args) {
         double a,b;
         Scanner sc = new Scanner(System.in);

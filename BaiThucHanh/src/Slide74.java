@@ -1,5 +1,5 @@
 import java.util.Scanner;
-//74    81  90  95  96  97
+
 public class Slide74 {
     public static void main(String[] args) {
         Scanner inputScanner = new Scanner(System.in);

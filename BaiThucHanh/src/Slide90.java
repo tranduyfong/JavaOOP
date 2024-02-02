@@ -7,8 +7,8 @@ public class Slide90 {
         System.out.print("Nhap chuoi ki tu bat ki : ");
         String chuoiKiTu = inputScanner.next();
 
-        System.out.println("Chuoi ki tu la : ");
-        for(int i = 0 ; i < chuoiKiTu.length() ; i ++) {
+        System.out.println("Chuoi ki tu theo tung dong : ");
+        for(int i =0 ; i < chuoiKiTu.length() ; i++ ) {
             System.out.println(chuoiKiTu.charAt(i));
         }
     }

@@ -10,10 +10,11 @@ public class Bai12 {
         System.out.print("Nhap so phan tu hang doc cua mang 2 chieu : ");
         int hangDoc = input.nextInt();
         
+
         //Khai bao va nhap gia tri cho mang
         int[][] mangHaiChieu = new int[hangNgang][hangDoc];
-        for(int i = 0 ; i < mangHaiChieu.length;i++) {
-            for(int j = 0 ;  j < mangHaiChieu[i].length;j++) {
+        for(int i = 0 ; i < hangNgang;i++) {
+            for(int j = 0 ;  j < hangDoc;j++) {
                 System.out.print("Nhap gia tri cho phan tu [" + (i+1) + "]" + "[" + (j+1) + "] la : ");
                 mangHaiChieu[i][j] = input.nextInt();
             }
@@ -21,8 +22,8 @@ public class Bai12 {
 
         //Khoi tao bien co dinh va tim kiem gia tri lon nhat
         int maxOfValue = mangHaiChieu[0][0];
-        for(int i = 0 ;i < mangHaiChieu.length; i++) {
-            for(int j = 0;j < mangHaiChieu[i].length; j++) {
+        for(int i = 0 ;i < hangNgang; i++) {
+            for(int j = 0;j < hangDoc; j++) {
                 if(mangHaiChieu[i][j] >= maxOfValue) {
                     maxOfValue = mangHaiChieu[i][j];
                 }

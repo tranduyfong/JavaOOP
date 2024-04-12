@@ -1,4 +1,4 @@
-package Slide71Chuong3;
+package GetterSetter;
 
 public class Main {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package Slide71Chuong3;
+package GetterSetter;
 
 public class HinhTron {
     private final float PI = 3.14f;

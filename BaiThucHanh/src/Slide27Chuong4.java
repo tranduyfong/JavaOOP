@@ -5,6 +5,6 @@ public class Slide27Chuong4 {
         // Tao mot danh sach lien ket LinkedList
         // Co kieu la Integer
         LinkedList<Integer> linkedList = new LinkedList<>();
-
+        
     }
 }

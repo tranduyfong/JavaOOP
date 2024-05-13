@@ -3,7 +3,7 @@ package Lab4;
 import java.util.LinkedList;
 import java.util.Scanner;
 
-public class LinkedListStudent {
+public class Bai3 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         LinkedList<Student> linkedList = new LinkedList<>();

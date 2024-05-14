@@ -1,5 +1,3 @@
-package Lab4;
-
 import java.util.LinkedList;
 import java.util.Scanner;
 

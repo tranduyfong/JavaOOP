@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
-public class Slide98Chuong4 {
+public class Slide89Chuong4 {
     public static void main(String[] args) {
         HashMap<String, String> hashMapCity = new HashMap<>();
         hashMapCity.put("QN", "Quang Nam");

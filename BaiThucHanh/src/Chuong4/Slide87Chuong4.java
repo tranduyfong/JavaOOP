@@ -3,8 +3,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
-import javax.swing.RowFilter.Entry;;
-
 public class Slide87Chuong4 {
     public static void main(String[] args) {
         // Khai bao Hash Map voi key va value la String

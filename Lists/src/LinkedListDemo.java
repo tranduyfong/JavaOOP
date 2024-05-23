@@ -1,13 +1,12 @@
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.Scanner;
 
-public class ArrayListDemo {
+public class LinkedListDemo {
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        int numberStudent;
+        Scanner sc = new Scanner(System.in);
         System.out.print("Nhap so luong sinh vien : ");
-        numberStudent = input.nextInt();
-        ArrayList<Student> arrayListStudents = new ArrayList<>(numberStudent);
+        int soLuong = sc.nextInt();
+        LinkedList<Student> linkedListStudents = new LinkedList<>();
 
         while (true) {
             System.out.println();
@@ -18,24 +17,24 @@ public class ArrayListDemo {
             System.out.println("0. Thoat");
             System.out.println();
             System.out.print("Nhap lua chon : ");
-            int numberSelect = input.nextInt();
+            int luaChon = sc.nextInt();
             System.out.println();
 
-            if(numberSelect == 0) {
+            if(luaChon == 0) {
                 break;
             } else {
-                switch (numberSelect) {
+                switch (luaChon) {
                     case 1:
                         Student newStudent = new Student();
                         newStudent.inputInfomartion();
-                        arrayListStudents.add(newStudent);
+                        linkedListStudents.add(newStudent);
                         break;
                     case 2:
                         String findName;
                         System.out.print("Lua chon sinh vien can chinh sua : ");
-                        findName = input.next();
+                        findName = sc.next();
                         System.out.println();
-                        for(var x : arrayListStudents) {
+                        for(var x : linkedListStudents) {
                             if(x.fullName.equals(findName)) {
                                 x.updateInformation();
                             }
@@ -45,13 +44,13 @@ public class ArrayListDemo {
                     case 3:
                         String findStudent;
                         System.out.print("Nhap ten sinh vien can xoa : ");
-                        findStudent = input.next();
+                        findStudent = sc.next();
                         System.out.println();
                         boolean foundStudent = false;
-                        for(int i = 0; i < arrayListStudents.size(); i++) {
-                            if(arrayListStudents.get(i).fullName.equals(findStudent)) {
+                        for(int i = 0; i < linkedListStudents.size(); i++) {
+                            if(linkedListStudents.get(i).fullName.equals(findStudent)) {
                                 foundStudent = true;
-                                arrayListStudents.remove(i);
+                                linkedListStudents.remove(i);
                                 System.out.println("Xoa thanh cong !");
                                 System.out.println();
                                 break;
@@ -64,12 +63,12 @@ public class ArrayListDemo {
                     case 4:
                         String findStudent2;
                         System.out.print("Lua chon sinh vien can hien thi : ");
-                        findStudent2 = input.next();
+                        findStudent2 = sc.next();
                         boolean showStudent = false;
-                        for(int i = 0; i < arrayListStudents.size(); i++) {
-                            if(arrayListStudents.get(i).fullName.equals(findStudent2)) {
+                        for(int i = 0; i < linkedListStudents.size(); i++) {
+                            if(linkedListStudents.get(i).fullName.equals(findStudent2)) {
                                 showStudent = true;
-                                arrayListStudents.get(i).outputInformation();
+                                linkedListStudents.get(i).outputInformation();
                                 System.out.println();
                                 break;
                             }
@@ -83,6 +82,5 @@ public class ArrayListDemo {
                 }
             }
         }
-        input.close();
     }
 }

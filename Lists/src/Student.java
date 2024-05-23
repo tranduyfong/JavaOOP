@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Student {
@@ -21,7 +22,7 @@ public class Student {
         age = 0;
         thongTinKhac = new ArrayList<>();
     }
-    public static void ThemSinhVien(ArrayList<Student> arrayList, int soLuong) {
+    public static void ThemSinhVien(List<Student> arrayList, int soLuong) {
         for(int i = 0; i < soLuong; i++) {
             Student newStudent = new Student();
             System.out.println("Nhap thong tin cua sinh vien thu " + (i + 1));
@@ -45,7 +46,7 @@ public class Student {
         thongTinKhac.add(themThongTin);
     }
     
-    public static void Display(ArrayList<Student> arrayList) {
+    public static void Display(List<Student> arrayList) {
         for(var x : arrayList) {
             System.out.println();
             x.HienThiThongTin();
@@ -61,7 +62,7 @@ public class Student {
         }
     }
 
-    public static void SuaThongTin(ArrayList<Student> arrayList) {
+    public static void SuaThongTin(List<Student> arrayList) {
         Scanner sc = new Scanner(System.in);
         System.out.print("Nhap ten sinh vien can sua : ");
         String name = sc.next();
@@ -74,7 +75,7 @@ public class Student {
         }
     }
 
-    public static void XoaThongTin(ArrayList<Student> arrayList) {
+    public static void XoaThongTin(List<Student> arrayList) {
         Scanner sc = new Scanner(System.in);
         System.out.print("Nhap ten sinh vien can xoa : ");
         String name = sc.next();

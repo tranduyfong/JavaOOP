@@ -2,86 +2,85 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Student {
-    Scanner input = new Scanner(System.in);
-    // Attributes
-    public String fullName;
-    public int age;
-    public ArrayList<String> otherInformation;
+    private String fullName;
+    private int age;
+    private ArrayList<String> thongTinKhac;
 
-    // Methods
+    public String getFullName() {
+        return fullName;
+    }
+    public int getAge() {
+        return age;
+    }
+    public ArrayList<String> getThongTinKhac() {
+        return thongTinKhac;
+    }
+
     public Student() {
-        this.fullName = "";
-        this.age = 0;
-        this.otherInformation = new ArrayList<>();
+        fullName = "";
+        age = 0;
+        thongTinKhac = new ArrayList<>();
+    }
+    public static void ThemSinhVien(ArrayList<Student> arrayList, int soLuong) {
+        for(int i = 0; i < soLuong; i++) {
+            Student newStudent = new Student();
+            System.out.println("Nhap thong tin cua sinh vien thu " + (i + 1));
+            newStudent.NhapThongTin();
+            arrayList.add(newStudent);
+        }
+    }
+    public void NhapThongTin() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Nhap ten : ");
+        fullName = sc.next();
+        System.out.print("Nhap tuoi : ");
+        age = sc.nextInt();
+        ThemThongTin();
     }
 
-    // Phuong thuc nhap thong tin
-    public void inputInfomartion() {
-        System.out.print("Nhap ten : ");
-        fullName = input.next();
-        System.out.print("Nhap tuoi : ");
-        age = input.nextInt();
-        System.out.println();
-        addInformation();
+    public void ThemThongTin() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Nhap thong tin can them : ");
+        String themThongTin = sc.next();
+        thongTinKhac.add(themThongTin);
     }
-    public void outputInformation() {
-        System.out.println();
-        System.out.println("HoTen : " + fullName);
-        System.out.println("Tuoi : " + age);
-        for(var x : otherInformation) {
+    
+    public static void Display(ArrayList<Student> arrayList) {
+        for(var x : arrayList) {
+            System.out.println();
+            x.HienThiThongTin();
+            System.out.println();
+        }
+    }
+
+    public void HienThiThongTin() {
+        System.out.println("Ho ten : " + getFullName());
+        System.out.println("Tuoi : " + getAge());
+        for(var x : thongTinKhac) {
             System.out.println(x);
         }
-        System.out.println();
     }
 
-    public void addInformation() {
-        while (true) {
-            System.out.println("Moi ban nhap thong tin can nhap them !");
-            System.out.println("Go 0 neu ban muon thoat !");
-            System.out.println();
-            System.out.print("Moi ban nhap : ");
-            String inforStudent;
-            inforStudent = input.next();
-            System.out.println();
-
-            if(inforStudent.equals("0")) {
-                break;
-            } else {
-                    otherInformation.add(inforStudent);
-                    input.nextLine();
+    public static void SuaThongTin(ArrayList<Student> arrayList) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Nhap ten sinh vien can sua : ");
+        String name = sc.next();
+        for(int i = 0; i < arrayList.size(); i++) {
+            if (arrayList.get(i).getFullName().equals(name)) {
+                Student newStudent = new Student();
+                newStudent.NhapThongTin();
+                arrayList.set(i, newStudent);
             }
         }
     }
-    public void updateInformation() {
-        String inputSelection;
-        System.out.println("Moi ban nhap thong tin can chinh sua : ");
-        inputSelection = input.next();
-        System.out.println();
-        if (inputSelection.startsWith("HoTen")) {
-            System.out.print("Nhap ten moi : ");
-            fullName = input.next();
-            System.out.println("Thay doi thanh cong !");
-            System.out.println();
-        } else if (inputSelection.startsWith("Tuoi")) {
-            System.out.print("Nhap tuoi moi : ");
-            age = input.nextInt();
-            System.out.println("Thay doi thanh cong !");
-            System.out.println();
-        } else {
-            boolean checkChange = false;
-            for(int i = 0; i < otherInformation.size(); i++) {
-                if (otherInformation.get(i).startsWith(inputSelection)) {
-                    System.out.print("Nhap " + inputSelection + " moi : ");
-                    String newInformation = input.next();
-                    otherInformation.set(i, inputSelection + " : " + newInformation);
-                    System.out.println("Thay doi thanh cong !");
-                    System.out.println();
-                    checkChange = true;
-                }
-            }
-            if (!checkChange) {
-                System.out.println("Khong ton tai thong tin do !");
-                System.out.println();
+
+    public static void XoaThongTin(ArrayList<Student> arrayList) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Nhap ten sinh vien can xoa : ");
+        String name = sc.next();
+        for(int i = 0; i < arrayList.size(); i++) {
+            if (arrayList.get(i).getFullName().equals(name)) {
+                arrayList.remove(i);
             }
         }
     }

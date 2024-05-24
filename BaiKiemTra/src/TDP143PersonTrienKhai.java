@@ -2,6 +2,7 @@ import java.util.LinkedList;
 import java.util.Scanner;
 
 public class TDP143PersonTrienKhai implements TDP143Person {
+    
     public void NhapThongTin() {
         Scanner sc = new Scanner(System.in);
         System.out.print("Nhap ten : ");
